@@ -1,0 +1,140 @@
+import glob
+import os
+import pathlib
+from pathlib import Path
+import shutil
+import zipfile
+
+originPath4 = 'C:\MASAUSTU\program_setuplari\Microsoft_office_2007_turkce\Admin'
+originPath2 = 'C:\MASAUSTU\program_setuplari\Microsoft_office_2007_turkce\Admin/**/*'
+originPath3 = 'C:\MASAUSTU\program_setuplari\Microsoft_office_2007_turkce\Admin*'
+originPath = 'C:\MASAUSTU\program_setuplari\Microsoft_office_2007_turkce\Admin\**'
+#targetPath2 = '\Users\orhan\OneDrive\Desktop\copiedfolders' 
+#targetPath = 'C:\\Users\\orhan\\Documents\\PythonZip'
+targetPath3 = r'\Users\orhan\Documents\PythonZip.zip'
+adminPath = r'\Users\orhan\Documents\Admin'
+
+path = "C:"
+ 
+# Join various path components
+targetPath = os.path.join(path, targetPath3)
+originPath5 = os.path.join(path, r'\MASAUSTU\program_setuplari\Microsoft_office_2007_turkce\Admin')
+
+import zipfile
+
+"""
+os.mkdir(targetPath3)
+shutil.copyfile(originPath5, targetPath3)
+"""
+"""
+with zipfile.ZipFile(targetPath, 'w', zipfile.ZIP_DEFLATED) as myzip:
+        myzip.write(adminPath)
+"""
+""""
+bu kodda calisiyor
+def createZIP(folder,filename,compress = zipfile.ZIP_DEFLATED):
+        # ZIP Archive Öffnen
+    with zipfile.ZipFile(filename, 'w', compress) as target:
+        for root, dirs, files in os.walk(folder):
+            for file in files:
+                add = os.path.join(root, file)
+
+                                # Datei zum ZIP Archive Hinzufügen
+                target.write(add)
+
+                print(add + ' wurde Hinzugefügt')
+
+createZIP(originPath4,targetPath,compress = zipfile.ZIP_DEFLATED)
+"""
+
+"""
+for root, dirs, files in os.walk(originPath4):
+        print(files)
+        print(dirs)
+        print(root)
+
+"""
+
+
+
+
+
+
+"""
+# bu kod cok onemli
+
+with zipfile.ZipFile(targetPath, 'w', zipfile.ZIP_DEFLATED) as myzip:
+    for f in glob.glob(originPath, recursive=True):
+        myzip.write(f)
+"""
+
+
+"""
+def createZIP(folder,filename,compress = zipfile.ZIP_DEFLATED):
+        # ZIP Archive Öffnen
+    with zipfile.ZipFile(filename + '.zip', 'w', compress) as target:
+        for root, dirs, files in os.walk(folder):
+            for file in files:
+                add = os.path.join(root, file)
+
+                                # Datei zum ZIP Archive Hinzufügen
+                target.write(add)
+
+                print(add + ' wurde Hinzugefügt')
+"""
+
+
+"""
+for root, dirs, files in os.walk(originPath):
+        print(root)
+        print(files)
+"""            
+
+
+
+"""
+for subfiles in os.walk(originPath):
+    for subfile in subfiles:
+        print(subfile)
+"""
+
+"""
+for subfiles in os.walk(originPath):
+    for subfile in subfiles:
+        print(subfile)
+"""
+"""
+for path in glob.glob(f'{originPath}/*/**/', recursive=True):
+    print(path.name)
+"""
+"""
+entries = Path(originPath)
+for entry in entries.iterdir():
+    print(entry.name)
+"""
+
+"""
+with os.scandir(originPath) as entries:
+    for entry in entries:
+        print(entry.name)
+"""
+
+"""
+py = pathlib.Path().glob(originPath3)
+print(py)
+"""
+
+
+"""
+path = glob.glob(originPath2)
+pathList = os.listdir(originPath)
+for paths in path:
+    #print('{}\n'.format(paths))
+    print(paths)
+#print(len(pathList))
+"""
+
+"""
+for subfiles in os.walk(originPath):
+    print(subfiles)
+"""
