@@ -33,6 +33,18 @@ with zipfile.ZipFile(targetPath, 'w', zipfile.ZIP_DEFLATED) as myzip:
 """"
 bu kodda calisiyor
 def createZIP(folder,filename,compress = zipfile.ZIP_DEFLATED):
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CMD = """$compress = @{
+  Path = \"C:\\MASAUSTU\\program_setuplari\\Microsoft_office_2007_turkce\"
+  CompressionLevel = \"Fastest\"
+  DestinationPath = \"C:\\Users\\orhan\\OneDrive\\Desktop\\LCD DRIVER LIB\\src\\dosya.zip\"
+}
+Compress-Archive @compress"""
+
+subprocess.run(["powershell", "-Command", CMD], capture_output=True)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         # ZIP Archive Öffnen
     with zipfile.ZipFile(filename, 'w', compress) as target:
         for root, dirs, files in os.walk(folder):
