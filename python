@@ -138,3 +138,12 @@ for paths in path:
 for subfiles in os.walk(originPath):
     print(subfiles)
 """
+
+
+
+$compress = @{
+  Path = "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
+  CompressionLevel = "Fastest"
+  DestinationPath = "C:\Archives\Draft.zip"
+}
+Compress-Archive @compress
